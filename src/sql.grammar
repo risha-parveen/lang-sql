@@ -19,7 +19,9 @@ element {
   Builtin |
   SpecialVar |
   CompositeIdentifier {
-    Dot? (QuotedIdentifier | Identifier | SpecialVar) (!dot Dot (QuotedIdentifier | Identifier | SpecialVar))+
+    (QuotedIdentifier | Identifier | SpecialVar | Keyword | String) 
+    (!dot Dot (QuotedIdentifier | Identifier | SpecialVar | Keyword | String))+ 
+    (!dot Dot (QuotedIdentifier | Identifier | SpecialVar | Keyword | String))+
   } |
   Keyword |
   Type |
